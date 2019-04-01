@@ -1,0 +1,120 @@
+.todo__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100vw;
+    background:
+        -webkit-linear-gradient(315deg, hsla(209.67, 90.25%, 48.83%, 1) 0%, hsla(209.67, 90.25%, 48.83%, 0) 70%),
+        -webkit-linear-gradient(65deg, hsla(179.16, 91.65%, 48.68%, 1) 10%, hsla(179.16, 91.65%, 48.68%, 0) 80%),
+        -webkit-linear-gradient(135deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
+        -webkit-linear-gradient(205deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
+      background:
+        linear-gradient(135deg, hsla(209.67, 90.25%, 48.83%, 1) 0%, hsla(209.67, 90.25%, 48.83%, 0) 70%),
+        linear-gradient(25deg, hsla(179.16, 91.65%, 48.68%, 1) 10%, hsla(179.16, 91.65%, 48.68%, 0) 80%),
+        linear-gradient(315deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
+        linear-gradient(245deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
+}
+.todo__profile-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.todo__profile-email{
+  font-size: 2rem;
+  margin-left: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.todo__logout-btn{
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 30px;
+  cursor: pointer;
+  padding: 10px 50px 10px 50px;
+  transition: background 0.2s linear;
+}
+.todo__logout-btn:hover{
+  background: rgba(0, 0, 0, 0.15);
+}
+.todo__logout-btn:focus{
+  background: rgba(0, 0, 0, 0.15);
+}
+.add-todo__container{
+  width: 60%;
+  padding: 30px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.add-todo__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-todo__input{
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s linear;
+}
+.add-todo__input:focus{
+  background: rgba(0, 0, 0, 0.15);
+}
+.add-todo__submit-btn{
+  outline: none;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 30px 10px 30px;
+  cursor: pointer;
+  transition: background 0.2s linear;
+}
+.add-todo__submit-btn:hover{
+  background: rgba(0, 0, 0, 0.15);
+}
+.add-todo__submit-btn:focus{
+  background: rgba(0, 0, 0, 0.15);
+}
+.todo__list{
+  width: 60%;
+  list-style: none;
+}
+.todo__list-item{
+  position: relative;
+  font-size: 2.4rem;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin: 20px 0 20px 0;
+  padding: 30px 80px 30px 30px;
+}
+.todo__list-item-delete{
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.2s linear;
+}
+.todo__list-item-delete:hover{
+  color: rgba(255, 255, 255, 0.5);
+}

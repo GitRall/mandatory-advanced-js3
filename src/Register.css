@@ -1,0 +1,107 @@
+.register__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background:
+      -webkit-linear-gradient(315deg, hsla(209.67, 90.25%, 48.83%, 1) 0%, hsla(209.67, 90.25%, 48.83%, 0) 70%),
+      -webkit-linear-gradient(65deg, hsla(179.16, 91.65%, 48.68%, 1) 10%, hsla(179.16, 91.65%, 48.68%, 0) 80%),
+      -webkit-linear-gradient(135deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
+      -webkit-linear-gradient(205deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
+    background:
+      linear-gradient(135deg, hsla(209.67, 90.25%, 48.83%, 1) 0%, hsla(209.67, 90.25%, 48.83%, 0) 70%),
+      linear-gradient(25deg, hsla(179.16, 91.65%, 48.68%, 1) 10%, hsla(179.16, 91.65%, 48.68%, 0) 80%),
+      linear-gradient(315deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
+      linear-gradient(245deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
+
+}
+.register__wrapper{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 40px 30px 40px 30px;
+  border-radius: 10px;
+}
+.register__title{
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.register__form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.register__input-wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.register__label{
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.register__input{
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s linear;
+}
+.register__input:focus{
+  background: rgba(0, 0, 0, 0.2);
+}
+.register__submit-btn{
+  outline: none;
+  align-self: flex-end;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  width: 150px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s linear;
+}
+.register__submit-btn:focus{
+  background: rgba(0, 0, 0, 0.2);
+}
+.register__submit-btn:hover{
+  background: rgba(0, 0, 0, 0.2);
+}
+.register__helper-text{
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 30px 12px;
+}
+.register__line-between{
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 30px 0 30px 0;
+}
+.register__line{
+  height: 1px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.8);
+}
+.register__line-text{
+  font-size: 1.6rem;
+  margin: 0 10px 0 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.register__icon{
+  position: absolute;
+  top: 30%;
+  right: -50px;
+  font-size: 3.6rem;
+  color: #7fff40;
+}
