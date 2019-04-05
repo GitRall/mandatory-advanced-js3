@@ -34,6 +34,7 @@ const Todo = () => {
     if(todos.length > 0){
       return;
     }
+    else if(Object.keys(user).length === 0) return
     else{
       axios.get(`${API_ROOT}/todos`, options)
       .then((res) => {
@@ -52,6 +53,7 @@ const Todo = () => {
 
   function onAddTodo(e){
     e.preventDefault();
+    if(addTodo.length <= 0) return;
     axios.post(`${API_ROOT}/todos`, { content: addTodo }, options)
     .then((res) => {
       axios.get(`${API_ROOT}/todos`, options)
