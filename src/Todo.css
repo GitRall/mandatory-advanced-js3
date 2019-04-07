@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
+  overflow: auto;
   height: 100vh;
   width: 100vw;
     background:
@@ -16,42 +16,12 @@
         linear-gradient(315deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
         linear-gradient(245deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
 }
-.todo__profile-wrapper{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 30px 0 30px 0;
-  background: rgba(0, 0, 0, 0.1);
-}
-.todo__profile-email{
-  font-size: 2rem;
-  margin-left: 30px;
-  color: rgba(255, 255, 255, 0.9);
-}
-.todo__logout-btn{
-  font-size: 2rem;
-  background: rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 50px;
-  color: rgba(255, 255, 255, 0.9);
-  margin-right: 30px;
-  cursor: pointer;
-  padding: 10px 50px 10px 50px;
-  transition: background 0.2s linear;
-}
-.todo__logout-btn:hover{
-  background: rgba(0, 0, 0, 0.15);
-}
-.todo__logout-btn:focus{
-  background: rgba(0, 0, 0, 0.15);
-}
 .add-todo__container{
   width: 60%;
   padding: 30px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.1);
-  margin-top: 30px;
+  margin-top: 100px;
   border-radius: 10px;
 }
 .add-todo__form{
@@ -116,5 +86,10 @@
   transition: color 0.2s linear;
 }
 .todo__list-item-delete:hover{
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+}
+.todo__error-msg{
+  margin-top: 30px;
+  font-size: 2.4rem;
+  color: rgba(255, 255, 255, 0.9);
 }
