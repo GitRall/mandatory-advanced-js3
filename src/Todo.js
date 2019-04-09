@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import './Todo.css';
 import AddTodo from './AddTodo';
@@ -16,7 +16,6 @@ const Todo = () => {
       Authorization: `Bearer ${token$.value}`,
     }
   }
-
   const [redirectHome, setRedirectHome] = useState(false);
   const [user, setUser] = useState({});
   const [addTodo, setAddTodo] = useState('');
@@ -24,6 +23,7 @@ const Todo = () => {
   const [errorMsg, setErrorMsg] = useState(false);
 
   useEffect(() => {
+    console.log(options);
       axios.get(`${API_ROOT}/todos`, options)
       .then((res) => {
         console.log(res);
@@ -31,7 +31,7 @@ const Todo = () => {
       })
       .catch((thrown) => {
         if (axios.isCancel(thrown)) {
-          console.log('canceled')
+          console.log('Request canceled')
           return;
         }
         console.log(thrown);
@@ -39,6 +39,7 @@ const Todo = () => {
       })
       return () => {
         console.log('unmounting');
+        console.log(source);
         source.cancel('Data request canceled');
       }
   }, [])
@@ -52,23 +53,6 @@ const Todo = () => {
       setUser(decoded);
     }
   })
-
-  // useEffect(() => {
-  //   if(todos.length > 0) return;
-  //   else if(Object.keys(user).length === 0) return;
-  //   else{
-  //     axios.get(`${API_ROOT}/todos`, options)
-  //     .then((res) => {
-  //       console.log(res);
-  //       setTodos(res.data.todos);
-  //     })
-  //     .catch((thrown) => {
-  //       console.log(thrown);
-  //       setErrorMsg(true);
-  //     })
-  //   }
-  // })
-
 
   function onTodoChange(e){
     setAddTodo(e.target.value);
@@ -95,6 +79,7 @@ const Todo = () => {
     })
   }
   function onDeleteTodo(id){
+    console.log(options);
     axios.delete(`${API_ROOT}/todos/${id}`, options)
     .then((res) => {
       let todosCopy = [...todos];
@@ -103,6 +88,11 @@ const Todo = () => {
       })
       todosCopy.splice(index, 1);
       setTodos(todosCopy);
+    })
+    .catch((thrown) => {
+      if(axios.isCancel(thrown)){
+        console.log('delete canceled');
+      }
     })
   }
 
@@ -118,12 +108,20 @@ const Todo = () => {
   return(
     <div className='todo__container'>
       <header>
-        <h2 className='header__profile-email'>{user.email}</h2>
-        <button className='header__sign-out-btn' onClick={onLogout}>Sign out</button>
+        <div className='header__link-wrapper'>
+          <NavLink to='/todo' className='header__link'>{user.email}</NavLink>
+        </div>
+        <div className='header__link-wrapper'>
+          <NavLink exact to='/' className='header__link'>Login</NavLink>
+          <NavLink to='/register' className='header__link'>Register</NavLink>
+          <button className='header__sign-out-btn' onClick={onLogout}>Sign out</button>
+        </div>
       </header>
-      <AddTodo onTodoChange={onTodoChange} onAddTodo={onAddTodo} value={addTodo}></AddTodo>
-      {errorMsg ? <span className='todo__error-msg'>Something went wrong, please sign out and try again later</span> : null}
-      <TodoList todos={todos} deleteTodo={onDeleteTodo}></TodoList>
+      <section className='todo__content'>
+        <AddTodo onTodoChange={onTodoChange} onAddTodo={onAddTodo} value={addTodo}></AddTodo>
+        {errorMsg ? <span className='todo__error-msg'>Something went wrong, please sign out and try again later</span> : null}
+        <TodoList todos={todos} deleteTodo={onDeleteTodo}></TodoList>
+      </section>
     </div>
   )
 }

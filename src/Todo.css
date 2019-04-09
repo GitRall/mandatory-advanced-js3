@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: auto;
+  /* overflow: auto; */
   height: 100vh;
   width: 100vw;
     background:
@@ -16,12 +16,20 @@
         linear-gradient(315deg, hsla(204.12, 99.99%, 41.96%, 1) 15%, hsla(204.12, 99.99%, 41.96%, 0) 80%),
         linear-gradient(245deg, hsla(109.55, 91.86%, 47.1%, 1) 100%, hsla(109.55, 91.86%, 47.1%, 0) 70%);
 }
+.todo__content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow: auto;
+}
 .add-todo__container{
   width: 60%;
   padding: 30px;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.1);
-  margin-top: 100px;
+  margin-top: 30px;
   border-radius: 10px;
 }
 .add-todo__form{

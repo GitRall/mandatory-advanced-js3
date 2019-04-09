@@ -1,17 +1,17 @@
 header{
-  position: absolute;
-  top: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   min-height: 70px;
-  /* padding: 30px 0 30px 0; */
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.active{
   background: rgba(0, 0, 0, 0.1);
 }
-.header__profile-wrapper{
+.header__link-wrapper{
   display: flex;
-  height: 100%;
+  margin: 0 30px 0 30px;
 }
 .header__profile-email{
   font-size: 2rem;
@@ -24,7 +24,6 @@ header{
   border: none;
   border-radius: 50px;
   color: rgba(255, 255, 255, 0.9);
-  margin-right: 30px;
   cursor: pointer;
   padding: 10px 50px 10px 50px;
   transition: background 0.2s linear;
@@ -34,6 +33,19 @@ header{
 }
 .header__logout-btn:focus{
   background: rgba(0, 0, 0, 0.15);
+}
+.header__link{
+  display: flex;
+  align-items: center;
+  height: 70px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 20px 0 20px;
+  /* background: rgba(0, 0, 0, 0.05); */
+}
+.header__link:hover{
+  background: rgba(0, 0, 0, 0.1);
 }
 .header__profile-link{
   display: flex;
@@ -55,9 +67,7 @@ header{
   height: 70px;
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-left: 30px;
   padding: 0 20px 0 20px;
-  margin-right: 30px;
   background: none;
   border: none;
   cursor: pointer;
