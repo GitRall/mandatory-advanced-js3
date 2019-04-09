@@ -30,6 +30,10 @@ const Todo = () => {
         setTodos(res.data.todos);
       })
       .catch((thrown) => {
+        if (axios.isCancel(thrown)) {
+          console.log('canceled')
+          return;
+        }
         console.log(thrown);
         setErrorMsg(true);
       })
@@ -82,6 +86,10 @@ const Todo = () => {
       })
     })
     .catch((thrown) => {
+      if (axios.isCancel(thrown)) {
+        console.log('canceled')
+        return;
+      }
       console.log(thrown);
       setErrorMsg(true);
     })
@@ -97,10 +105,12 @@ const Todo = () => {
       setTodos(todosCopy);
     })
   }
+
   function onLogout(e){
     updateToken(null);
     setRedirectHome(true);
   }
+
   if(redirectHome){
     return <Redirect to='/'/>
   }

@@ -42,13 +42,14 @@ const Register = (props) => {
     password.length < 3 ||
     password.length > 20 ||
     password !== repeatPassword ||
-     repeatPassword.length < 3 ||
+    repeatPassword.length < 3 ||
     repeatPassword.length > 20) return;
     axios.post(`${API_ROOT}/register`, {email, password})
     .then((res) => {
       setRedirectHome(true);
     })
-    .catch((res) => {
+    .catch((thrown) => {
+      console.log(thrown.response);
       setErrorMsg(true);
     })
   }
