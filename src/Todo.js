@@ -23,23 +23,17 @@ const Todo = () => {
   const [errorMsg, setErrorMsg] = useState(false);
 
   useEffect(() => {
-    console.log(options);
       axios.get(`${API_ROOT}/todos`, options)
       .then((res) => {
-        console.log(res);
         setTodos(res.data.todos);
       })
       .catch((thrown) => {
         if (axios.isCancel(thrown)) {
-          console.log('Request canceled')
           return;
         }
-        console.log(thrown);
         setErrorMsg(true);
       })
       return () => {
-        console.log('unmounting');
-        console.log(source);
         source.cancel('Data request canceled');
       }
   }, [])
@@ -71,15 +65,12 @@ const Todo = () => {
     })
     .catch((thrown) => {
       if (axios.isCancel(thrown)) {
-        console.log('canceled')
         return;
       }
-      console.log(thrown);
       setErrorMsg(true);
     })
   }
   function onDeleteTodo(id){
-    console.log(options);
     axios.delete(`${API_ROOT}/todos/${id}`, options)
     .then((res) => {
       let todosCopy = [...todos];

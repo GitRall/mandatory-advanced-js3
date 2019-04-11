@@ -17,11 +17,9 @@ const Register = (props) => {
 
   useEffect(() => {
     if(!token$.value){
-      console.log('false');
       return;
     }
     else if(Object.entries(user).length <= 0 && token$.value){
-      console.log('hej');
       const decoded = jwt.decode(token$.value);
       setUser(decoded);
     }
@@ -53,7 +51,6 @@ const Register = (props) => {
       else{
         setErrorMsg(thrown.response.data.message);
       }
-      console.log(thrown.response);
     })
   }
   function onLogout(e){

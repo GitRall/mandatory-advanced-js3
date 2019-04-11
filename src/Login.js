@@ -16,12 +16,8 @@ const Login = (props) => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    console.log(source);
     return () => {
-      console.log(source);
       source.cancel('request canceled');
-      console.log('unmount');
-      // console.log(source);
     }
   }, [])
 
@@ -52,7 +48,6 @@ const Login = (props) => {
     })
     .catch((thrown) => {
       if(axios.isCancel(thrown)){
-        console.log('axios canceled');
         return;
       }
       if(thrown.response.status === 400){
